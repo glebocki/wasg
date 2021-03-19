@@ -1,7 +1,10 @@
 import 'ol/ol.css';
-import { Map, View } from 'ol';
-import TileLayer from 'ol/layer/Tile';
-import OSM from 'ol/source/OSM';
+import Map from 'ol/Map';
+import View from 'ol/View';
+import {Tile as TileLayer} from 'ol/layer';
+import {OSM} from 'ol/source';
+
+import { geolocation } from './geolocation.js'
 import { offices }  from './offices.js'
 
 const view = new View({
@@ -18,5 +21,8 @@ const map = new Map({
   ],
   view: view
 });
+
+geolocation(map, view);
+
 
 console.log(offices);
