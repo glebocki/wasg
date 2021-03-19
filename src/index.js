@@ -4,8 +4,10 @@ import View from 'ol/View';
 import {Tile as TileLayer} from 'ol/layer';
 import {OSM} from 'ol/source';
 
-import { geolocation } from './geolocation.js'
-import { offices }  from './offices.js'
+import { geolocation } from './geolocation.js';
+import { controls } from './controls.js';
+import { offices }  from './offices.js';
+import { vectorLayer } from './locations.js'
 
 const view = new View({
   center: [0, 0],
@@ -17,8 +19,10 @@ const map = new Map({
   layers: [
     new TileLayer({
       source: new OSM()
-    })
+    }),
+    vectorLayer,
   ],
+  controls: controls,
   view: view
 });
 

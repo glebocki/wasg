@@ -1,13 +1,8 @@
 /* Make map fill window fully */
-html, body { 
+html, body, .openlayers-map{ 
   width: 100%; 
   height: 100%; 
   margin: 0; 
   padding: 0; 
 } 
-
-.openlayers-map {
-  height: 100%;
-  width: 100%;
-}
 /* Fill End */
