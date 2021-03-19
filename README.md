@@ -6,4 +6,3 @@ Aplikacje Systemów Geoinformacyjnych"
 ## Autor
 
 Przemysław Głębocki - `glebocki.przemyslaw@gmail.com`
-
