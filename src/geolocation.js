@@ -6,6 +6,8 @@ import {Circle as CircleStyle, Fill, Stroke, Style} from 'ol/style';
 import {Vector as VectorLayer} from 'ol/layer';
 import {Vector as VectorSource} from 'ol/source';
 
+import {colors} from './assets/colors.js'
+
 export const geolocation = (map, view) => {
   var geolocation = new Geolocation({
     // enableHighAccuracy must be set to true to have the heading value.
@@ -28,10 +30,10 @@ export const geolocation = (map, view) => {
       image: new CircleStyle({
         radius: 6,
         fill: new Fill({
-          color: '#3399CC',
+          color: colors.blue,
         }),
         stroke: new Stroke({
-          color: '#fff',
+          color: colors.white,
           width: 2,
         }),
       }),
