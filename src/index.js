@@ -6,7 +6,8 @@ import {OSM} from 'ol/source';
 
 import { geolocation } from './geolocation.js';
 import { controls } from './controls.js';
-import { vectorLayer } from './locations.js'
+import { officesVectorLayer } from './locations.js'
+import { selectHoverFeatures } from './selectHoverFeatures.js';
 
 const view = new View({
   center: [0, 0],
@@ -19,10 +20,11 @@ const map = new Map({
     new TileLayer({
       source: new OSM()
     }),
-    vectorLayer,
+    officesVectorLayer,
   ],
   controls: controls,
   view: view
 });
 
 geolocation(map);
+selectHoverFeatures(map);

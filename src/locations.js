@@ -8,17 +8,23 @@ import {Circle, Fill, Stroke, Style} from 'ol/style';
 import { offices } from './assets/offices.js';
 import { epam } from './assets/colors.js';
 
-let citiesFeatures = offices.map((e) => { return new Feature({
+let officesFeatures = offices.map((e) => { 
+  return new Feature({
     geometry: new Point(fromLonLat(e.lonLat)),
+    id: e.id,
+    type: 'office',
+    city: e.city,
+    address: e.address,
+    country: e.country,
   });
 });
 
-let vectorSource = new VectorSource({
-  features: citiesFeatures,
+let officesVectorSource = new VectorSource({
+  features: officesFeatures,
 })
 
-export const vectorLayer = new VectorLayer({
-  source: vectorSource,
+const officesVectorLayer = new VectorLayer({
+  source: officesVectorSource,
   style: () => {
     return new Style({
       image: new Circle({
@@ -41,4 +47,7 @@ export const vectorLayer = new VectorLayer({
       // }),
     })
   }
-})
+});
+officesVectorLayer.set('name', 'offices');
+
+export { officesVectorLayer };
