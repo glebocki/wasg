@@ -6,7 +6,6 @@ import {OSM} from 'ol/source';
 
 import { geolocation } from './geolocation.js';
 import { controls } from './controls.js';
-import { offices }  from './offices.js';
 import { vectorLayer } from './locations.js'
 
 const view = new View({
@@ -27,6 +26,3 @@ const map = new Map({
 });
 
 geolocation(map, view);
-
-
-console.log(offices);
