@@ -5,7 +5,7 @@ import Point from 'ol/geom/Point';
 import {fromLonLat} from 'ol/proj';
 import {Circle, Fill, Stroke, Style} from 'ol/style';
 
-import { offices } from './offices.js'
+import { offices } from './assets/offices.js'
 
 let citiesFeatures = offices.map((e) => { return new Feature({
     geometry: new Point(fromLonLat(e.lonLat)),
