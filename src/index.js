@@ -25,4 +25,4 @@ const map = new Map({
   view: view
 });
 
-geolocation(map, view);
+geolocation(map);

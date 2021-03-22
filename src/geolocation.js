@@ -8,13 +8,15 @@ import {Vector as VectorSource} from 'ol/source';
 
 import {colors} from './assets/colors.js';
 
-export const geolocation = (map, view) => {
+export const geolocation = (map) => {
+  console.log(map);
+  console.log(map.getView());
   var geolocation = new Geolocation({
     // enableHighAccuracy must be set to true to have the heading value.
     trackingOptions: {
       enableHighAccuracy: true,
     },
-    projection: view.getProjection(),
+    projection: map.getView().getProjection(),
   });
   
   geolocation.setTracking(true);
