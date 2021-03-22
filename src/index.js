@@ -6,7 +6,7 @@ import {OSM} from 'ol/source';
 
 import { geolocation } from './geolocation.js';
 import { controls } from './controls.js';
-import { officesVectorLayer } from './locations.js'
+import { officesVectorLayer } from './officesVectorLayer.js'
 import { selectHoverFeatures } from './selectHoverFeatures.js';
 
 const view = new View({

@@ -19,8 +19,18 @@ var highlightStyle = new Style({
   })
 });
 
+var element = document.getElementById('popup');
+
+var popup = new Overlay({
+  element: element,
+  positioning: 'bottom-center',
+  stopEvent: false,
+  offset: [0, -50],
+});
+
 export const selectHoverFeatures = function selectHoverFeatures(map) {
   var selected = null;
+  map.addOverlay(popup);
 
   map.on('pointermove', function (e) {
     if (selected !== null) {
