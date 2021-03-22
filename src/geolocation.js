@@ -6,7 +6,7 @@ import {Circle as CircleStyle, Fill, Stroke, Style} from 'ol/style';
 import {Vector as VectorLayer} from 'ol/layer';
 import {Vector as VectorSource} from 'ol/source';
 
-import {colors} from './assets/colors.js'
+import {colors} from './assets/colors.js';
 
 export const geolocation = (map, view) => {
   var geolocation = new Geolocation({

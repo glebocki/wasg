@@ -5,7 +5,8 @@ import Point from 'ol/geom/Point';
 import {fromLonLat} from 'ol/proj';
 import {Circle, Fill, Stroke, Style} from 'ol/style';
 
-import { offices } from './assets/offices.js'
+import { offices } from './assets/offices.js';
+import { epam } from './assets/colors.js';
 
 let citiesFeatures = offices.map((e) => { return new Feature({
     geometry: new Point(fromLonLat(e.lonLat)),
@@ -22,11 +23,11 @@ export const vectorLayer = new VectorLayer({
     return new Style({
       image: new Circle({
           radius: 5,
-          stroke: new Stroke({
-              color: '#464547',
-          }),
           fill: new Fill({
-              color: '#39C2D7',
+            color: epam.blue,
+          }),
+          stroke: new Stroke({
+              color: epam.grey,
           }),
       }),
       // text: new ol.style.Text({
