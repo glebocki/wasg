@@ -28,7 +28,7 @@ let officesVectorSource = new VectorSource({
 })
 
 let officesCluster = new Cluster({
-  distance: 100,
+  distance: 50,
   source: officesVectorSource,
 });
 
