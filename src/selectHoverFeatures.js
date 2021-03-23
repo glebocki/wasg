@@ -5,7 +5,7 @@ import { colors } from './assets/colors.js'
 
 var highlightStyle = new Style({
   image: new CircleStyle({
-    radius: 5,
+    radius: 10,
     fill: new Fill({
       color: colors.epam.raspberry,
     }),
@@ -30,6 +30,15 @@ export function selectHoverFeatures(map) {
 
   let selected = null;
   map.on('pointermove', function (e) {
+    // Skip for Clusters
+    let features = map.getFeaturesAtPixel(e.pixel);
+    if (features.length > 0) {
+      // Cluster is a feature containing other features
+      if (features[0].values_.features.length > 1) {
+        return false;
+      }
+    }
+
     if (selected !== null) {
       selected.setStyle(undefined);
       selected = null;
