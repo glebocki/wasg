@@ -8,14 +8,18 @@ import { Circle, Fill, Stroke, Style, Text } from 'ol/style';
 import { offices } from './assets/offices.js';
 import { colors } from './assets/colors.js';
 
+let fromLatLon2LonLat = (latLon) => {
+  return [latLon[1], latLon[0]];
+}
+
 let officesFeatures = offices.map((e) => { 
   return new Feature({
-    geometry: new Point(fromLonLat(e.lonLat)),
+    geometry: new Point(fromLonLat(fromLatLon2LonLat(e.latLon))),
     id: e.id,
     city: e.city,
     name: e.city,
-    address: e.address,
     country: e.country,
+    description: e.description,
   });
 });
 
