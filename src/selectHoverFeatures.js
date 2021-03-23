@@ -1,8 +1,5 @@
-import {Circle as CircleStyle, Fill, Stroke, Style} from 'ol/style';
+import { Circle as CircleStyle, Fill, Stroke, Style } from 'ol/style';
 import Overlay from 'ol/Overlay';
-
-import {toStringHDMS} from 'ol/coordinate';
-import {toLonLat} from 'ol/proj';
 
 import { epam } from './assets/colors.js'
 
@@ -21,32 +18,45 @@ var highlightStyle = new Style({
 
 var element = document.getElementById('popup');
 
-var popup = new Overlay({
+var popupOverlay = new Overlay({
   element: element,
   positioning: 'bottom-center',
   stopEvent: false,
-  offset: [0, -50],
+  // offset: [0, -50],
 });
 
-export const selectHoverFeatures = function selectHoverFeatures(map) {
-  var selected = null;
-  map.addOverlay(popup);
+export function selectHoverFeatures(map) {
+  map.addOverlay(popupOverlay);
 
+  let selected = null;
   map.on('pointermove', function (e) {
     if (selected !== null) {
       selected.setStyle(undefined);
       selected = null;
     }
 
-    map.forEachFeatureAtPixel(e.pixel, function (f) {
-      let properties = f.getProperties();
-      if (properties.type == 'office') {
-        selected = f;
-        f.setStyle(highlightStyle);
-
-        console.log('Office Info: ', properties);
+    let feature = map.forEachFeatureAtPixel(e.pixel, function (feature, layer) {
+      if (layer.get('name') == 'offices') {
+        selected = feature;
+        feature.setStyle(highlightStyle);
+        return feature;
       }
-      return true;
-    });    
+      return false;
+    });
+
+    if (feature) {
+      let coordinates = feature.getGeometry().getCoordinates();
+      popupOverlay.setPosition(coordinates);
+      $(element).popover({
+        placement: 'top',
+        html: true,
+        content: 'Name: ' + feature.get('name')
+          + '<br>' + 'Country: ' + feature.get('country')
+          + '<br>' + 'Address: ' + feature.get('address')
+      });
+      $(element).popover('show');
+    } else {
+      $(element).popover('dispose');
+    }
   });
 }

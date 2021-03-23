@@ -12,8 +12,8 @@ let officesFeatures = offices.map((e) => {
   return new Feature({
     geometry: new Point(fromLonLat(e.lonLat)),
     id: e.id,
-    type: 'office',
     city: e.city,
+    name: e.city,
     address: e.address,
     country: e.country,
   });
@@ -35,16 +35,7 @@ const officesVectorLayer = new VectorLayer({
           stroke: new Stroke({
               color: epam.grey,
           }),
-      }),
-      // text: new ol.style.Text({
-      //   text: size.toString(),
-      //   font: '14px arial',
-      //   textAlign: 'center',
-      //   offsetY: -15,
-      //   fill: new ol.style.Fill({
-      //       color: '#000',
-      //   }),
-      // }),
+      })
     })
   }
 });
