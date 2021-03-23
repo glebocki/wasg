@@ -1,16 +1,16 @@
 import { Circle as CircleStyle, Fill, Stroke, Style } from 'ol/style';
 import Overlay from 'ol/Overlay';
 
-import { epam } from './assets/colors.js'
+import { colors } from './assets/colors.js'
 
 var highlightStyle = new Style({
   image: new CircleStyle({
     radius: 5,
     fill: new Fill({
-      color: epam.raspberry,
+      color: colors.epam.raspberry,
     }),
     stroke: new Stroke({
-      color: epam.grey,
+      color: colors.epam.grey,
       width: 2,
     }),
   })

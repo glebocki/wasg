@@ -1,4 +1,4 @@
-export const epam = {
+const epam = {
   blue: '#39c2d7',
   green: '#a3c644',
   grey: '#464547',
@@ -6,7 +6,10 @@ export const epam = {
   raspberry: '#8e244d',
 };
 
-export const colors = {
+const colors = {
   blue: '#3399CC',
   white: '#fff',
+  epam: epam,
 };
+
+export { colors }

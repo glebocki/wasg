@@ -6,7 +6,7 @@ import {fromLonLat} from 'ol/proj';
 import {Circle, Fill, Stroke, Style} from 'ol/style';
 
 import { offices } from './assets/offices.js';
-import { epam } from './assets/colors.js';
+import { colors } from './assets/colors.js';
 
 let officesFeatures = offices.map((e) => { 
   return new Feature({
@@ -30,10 +30,10 @@ const officesVectorLayer = new VectorLayer({
       image: new Circle({
           radius: 5,
           fill: new Fill({
-            color: epam.blue,
+            color: colors.epam.blue,
           }),
           stroke: new Stroke({
-              color: epam.grey,
+              color: colors.epam.grey,
           }),
       })
     })
