@@ -3,7 +3,7 @@
 Projekt realizowany dla Plotechniki Gdańskiej na potrzeby zajęć "Wybrane
 Aplikacje Systemów Geoinformacyjnych"
 
-## Uruchamianie 
+## Uruchamianie
 
 ``` sh
 npm start # Local live server for developement
