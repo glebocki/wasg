@@ -177,4 +177,4 @@ const uzbekistan = [
   },
 ];
 
-export const cis = [...armenia, ...belarus, ...kazahstan, ...russia, ...uzbekistan]
+export const cis = [...armenia, ...belarus, ...kazahstan, ...russia, ...uzbekistan];
