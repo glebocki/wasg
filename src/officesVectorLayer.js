@@ -15,8 +15,6 @@ let fromLatLon2LonLat = (latLon) => {
 let officesFeatures = offices.map((e) => { 
   return new Feature({
     geometry: new Point(fromLonLat(fromLatLon2LonLat(e.latLon))),
-    id: e.id,
-    city: e.city,
     name: e.city,
     country: e.country,
     description: e.description,
