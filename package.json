@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/glebocki/wasg#readme",
   "dependencies": {
+    "lo": "^0.41.0",
     "ol": "^6.5.0"
   },
   "devDependencies": {
