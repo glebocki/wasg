@@ -1,0 +1,11 @@
+/* Make map fill window fully */
+html, body, .openlayers-map{ 
+  width: 100%; 
+  height: 100%; 
+  margin: 0; 
+  padding: 0; 
+} 
+/* Fill End */
+
+
+/*# sourceMappingURL=/styles.8986bff4.css.map */
