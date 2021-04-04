@@ -1,9 +1,22 @@
-# Implementacja prostej mapy cyfrowej
+# Implementation of a simple digital map
 
-Projekt realizowany dla Plotechniki Gdańskiej na potrzeby zajęć "Wybrane
-Aplikacje Systemów Geoinformacyjnych"
+Project implemented for *Gdańsk University of Technology* for class *Selected
+Geoinformation Systems Applications*.
 
-## Autor
+[Live version](https://glebocki.github.io/wasg/)
 
-Przemysław Głębocki - `glebocki.przemyslaw@gmail.com`
+## Setup
 
+To run this project you require **Node.js**.
+
+``` sh
+npm start # Local live server for developement
+
+npm run build # To create production bundle (result is in dist/)
+
+npm run deploy # Deploying to Github Pages
+```
+
+## Author
+
+Przemysław Głębocki - *[glebocki](https://github.com/glebocki)* - `glebocki.przemyslaw@gmail.com`
