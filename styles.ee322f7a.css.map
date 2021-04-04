@@ -1,0 +1,1 @@
+{"version":3,"sources":["styles.css"],"names":[],"mappings":"AACA,0BACE,UAAW,CACX,WAAY,CACZ,QAAS,CACT,SACF","file":"styles.ee322f7a.css","sourceRoot":"../src","sourcesContent":["/* Make map fill window fully */\nhtml, body, .openlayers-map{ \n  width: 100%; \n  height: 100%; \n  margin: 0; \n  padding: 0; \n} \n/* Fill End */\n"]}
