@@ -27,8 +27,6 @@ var groupBy = function(xs, key) {
 
 let officesByCountry = groupBy([...americas, ...europe, ...asia, ...cis], 'country');
 
-console.log(officesByCountry);
-
 let layers = [];
 
 for (let country in officesByCountry) {
